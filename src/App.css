@@ -1,3 +1,6 @@
+* {
+  
+}
 .App {
   text-align: center;
 }
@@ -5,6 +8,40 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.li {
+  justify-content: center;
+  display: grid;
+  grid-column-align: center;
+  border: 1px solid green;
+}
+button {
+  cursor: pointer;
+}
+.dropdown {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-column-align: center;
+  cursor: pointer;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-column-align: center;
+  cursor: pointer;
+}
+
+input {
+  justify-content: center;
+  display: grid;
+  grid-column-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -43,7 +80,7 @@
 
 .lds-hourglass {
   display: inline-block;
-  position: relative;
+  /* position: relative; */
   width: 80px;
   height: 80px;
 }
