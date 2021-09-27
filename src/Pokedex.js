@@ -60,9 +60,7 @@ fetchSearch = async () => {
                 ? <Spinner />
                 : <PokedexArray pokedexArr = {this.state.pokedexArr}/>
                 
-
             }
-
             </div>
         )
     }
