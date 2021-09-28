@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import request from 'superagent'
-import PokemonItem from './PokemonItem'
+// import PokemonItem from './PokemonItem'
 import PokemonNew from './PokemonNew'
 
 
