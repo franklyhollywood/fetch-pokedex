@@ -31,12 +31,7 @@ export default class Details extends Component {
                 <p>HP: {this.state.singlePokemon.hp}</p>
                 <p>Speed: {this.state.singlePokemon.speed}</p>
                 <p>Hidden Ability: {this.state.singlePokemon.ability_hidden}</p>
-
-            
-                
-            <img className = "image" src = {this.state.singlePokemon.url_image} alt="pokemon"/>
-
-
+                <img className = "image" src = {this.state.singlePokemon.url_image} alt="pokemon"/>
             </div>
         )
     }
