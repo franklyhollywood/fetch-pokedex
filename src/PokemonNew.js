@@ -5,7 +5,7 @@ export default class PokemonNew extends Component {
         return (
             <div>
                <p>Pokemon Name: {this.props.pokemon}</p> 
-               <img src = {this.props.url_image} alt='' />
+               <img src = {this.props.url_image} alt={this.props.pokemon} />
             </div>
         )
     }
