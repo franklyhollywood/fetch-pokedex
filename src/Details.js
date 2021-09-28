@@ -23,7 +23,14 @@ export default class Details extends Component {
             <div>
                 <PokemonNew />
                 <p>Pokemon Name: {this.state.singlePokemon.pokemon}</p>
-                <p>Pokemon weight: {this.state.singlePokemon.weight}</p>
+                <p>weight: {this.state.singlePokemon.weight}</p>
+                <p>Type 1: {this.state.singlePokemon.type_1}</p>
+                <p>Type 2: {this.state.singlePokemon.type_2}</p>
+                <p>Attack: {this.state.singlePokemon.attack}</p>
+                <p>Defense: {this.state.singlePokemon.defense}</p>
+                <p>HP: {this.state.singlePokemon.hp}</p>
+                <p>Speed: {this.state.singlePokemon.speed}</p>
+                <p>Hidden Ability: {this.state.singlePokemon.ability_hidden}</p>
 
             
                 
