@@ -8,7 +8,7 @@ export default class PokemonItem extends Component {
             <li className = "li">
                 <Link to = {`/pokemon/${this.props.pokemon._id}`} >
             <p>Pokemon Name: {this.props.pokemon.pokemon}</p>
-            <p>Pokemon Name: {this.props.pokemon.pokemon}</p>
+            
 
             
                 
