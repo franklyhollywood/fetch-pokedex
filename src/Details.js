@@ -1,20 +1,31 @@
+
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import request, { get } 'superagent'
+import Header from './Header'
+import request from 'superagent'
+import PokemonItem from './PokemonItem'
+import PokemonNew from './PokemonNew'
+
 
 export default class Details extends Component {
 
-    state {
+    state = {
         _id: ''
     }
 
-    componentDidMount = async()
+    componentDidMount = async() => {
+        const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.props.match.params._id}`)
+        this.setState({_id: response.body})
+    }
+
+    
+
 
     render() {
         return (
             <div>
-                Details <Link to = 'Home.js'>Home</Link>
-                <Link to = 'Pokedex.js'>Pokedex</Link>
+                <Header />
+                <PokemonNew />
             </div>
         )
     }

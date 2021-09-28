@@ -7,12 +7,14 @@ import {
 } from 'react-router-dom';
 import Home from './Home.js'
 import Details from './Details.js'
+import Header from './Header.js'
 
 export default class App extends Component {
   render() {
     return (
       <div>
         <Router>
+          <Header />
                     <Switch>
                         <Route 
                             path="/" 
@@ -25,7 +27,7 @@ export default class App extends Component {
                             render={(routerProps) => <Pokedex {...routerProps} />} 
                         />
                         <Route 
-                          path="/pokemon/:id" 
+                          path="/pokemon/:_id" 
                           exact
                           render={(routerProps) => <Details {...routerProps} />} 
                         />

@@ -4,6 +4,7 @@ import request from 'superagent'
 import PokedexArray from './PokedexArray'
 import Spinner from './Spinner'
 import './App.css'
+import Header from './Header.js'
 
 export default class pokedex extends Component {
 // Set state before render
@@ -61,6 +62,7 @@ fetchSearch = async () => {
                 : <PokedexArray pokedexArr = {this.state.pokedexArr}/>
                 
             }
+            <Header />
             </div>
         )
     }
