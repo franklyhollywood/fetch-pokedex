@@ -16,7 +16,18 @@ export default class pokedex extends Component {
         //state of input field:
         query: '',
         //state of pokedexarray
-        pokedexArr: []
+        pokedexArr: [],
+        page: 1
+    }
+
+    nextPage = async () => {
+        await this.setState({page: this.state.page + 1})
+        this.fetchSearch()
+    }
+
+    previousPage = async () => {
+        await this.setState({page: this.state.page - 1})
+        this.fetchSearch()
     }
    //gets the state of the dropdown
     filterSort = async (e) => {
@@ -38,17 +49,20 @@ componentDidMount = () => {
 
 fetchSearch = async () => {
     this.setState({loading: true})
-    const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}`)
+    const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}&page=${this.state.page}&perPage=20`)
     this.setState({
         pokedexArr: response.body.results,
         loading: false
         })
-}
+    }
     render() {
         
         return (
             
             <div class = "container">
+
+                <button onClick={this.previousPage} disabled={this.state.page === 1}>go to {this.state.page -1}</button>
+                <button onClick={this.nextPage} disabled={this.state.pokedexArr.length <20}>go to {this.state.page +1}</button>
                 
                 <Dropdown className = "dropdown" handleChange = {this.filterSort} currentValue = {this.state.sortOrder} options = {["asc", "desc"]}/>
 
@@ -66,4 +80,5 @@ fetchSearch = async () => {
             </div>
         )
     }
+    
 }
